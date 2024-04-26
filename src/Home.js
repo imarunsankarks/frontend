@@ -2,7 +2,7 @@ import BlogList from "./BlogList";
 import useFetch from "./useFetch";
 const Home = () => {
 
-  const { loading, data: blogs } = useFetch('/api/routes')
+  const { loading, data: blogs } = useFetch('https://backend-v7tv.onrender.com/api/routes')
 
   return (
     <div className="home">
