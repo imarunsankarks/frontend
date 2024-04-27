@@ -69,43 +69,55 @@ const Create = () => {
     return (
         <div>
             <form onSubmit={handleSubmit} id='update-form' encType="multipart/form-data">
-                <div className='container'>
+                <div className='container mt-4'>
                     <div className='row each-input-field g-4'>
                         <div className='col-4'>
-                            <input type="text" name="id" onChange={handleChange} placeholder='ID' id='form-id' />
+                            <label htmlFor='id'>ID: </label>
+                            <input type="text" name="id" onChange={handleChange} placeholder='PB..' id='form-id' />
                         </div>
                         <div className='col-4'>
-                            <input type="text" name="name" onChange={handleChange} placeholder='Name' id='form-name' />
+                            <label htmlFor='name'>Name: </label>
+                            <input type="text" name="name" onChange={handleChange} id='form-name' />
                         </div>
                         <div className='col-4'>
-                            <input type="text" name="category" onChange={handleChange} placeholder='Category' id='form-category' />
+                            <label htmlFor='category'>Category: </label>
+                            <input type="text" name="category" onChange={handleChange} id='form-category' />
                         </div>
                         <div className='col-4'>
-                            <input type="text" name="color" onChange={handleChange} placeholder='Color' id='form-color' />
+                            <label htmlFor='color'>Color: </label>
+                            <input type="text" name="color" onChange={handleChange} id='form-color' />
                         </div>
                         <div className='col-4'>
-                            <input type="number" name="price" onChange={handleChange} placeholder='Price' id='form-price' />
+                            <label htmlFor='price'>Price: </label>
+                            <input type="number" name="price" onChange={handleChange} id='form-price' />
                         </div>
                         <div className='col-4'>
+                            <label htmlFor='image1'>Main image: </label>
                             <input type="file" name="image1" onChange={handleChange} />
                         </div>
                         <div className='col-4'>
+                            <label htmlFor='image2'>Other image: </label>
                             <input type="file" name="image2" onChange={handleChange} />
                         </div>
                         <div className='col-4'>
+                            <label htmlFor='image3'>Other image: </label>
                             <input type="file" name="image3" onChange={handleChange} />
                         </div>
                         <div className='col-4'>
-                            <input type="text" name="material" onChange={handleChange} placeholder='Material' id='form-material' />
+                            <label htmlFor='material'>Material: </label>
+                            <input type="text" name="material" onChange={handleChange} id='form-material' />
                         </div>
                         <div className='col-4'>
-                            <input type="text" name="size" onChange={handleChange} placeholder='Size (comma separated)' id='form-size' />
+                            <label htmlFor='size'>Size: </label>
+                            <input type="text" name="size" onChange={handleChange} placeholder='Comma separated' id='form-size' />
                         </div>
                         <div className='col-4'>
-                            <input type="text" name="quantity" onChange={handleChange} placeholder='Quantity (comma separated)' id='form-quantity' />
+                            <label htmlFor='quantity'>Quantity: </label>
+                            <input type="text" name="quantity" onChange={handleChange} placeholder='Comma separated' id='form-quantity' />
                         </div>
                         <div className='col-4'>
-                            <input type="number" name="offer" onChange={handleChange} placeholder='Offer(%)' id='form-offer' />
+                            <label htmlFor='offer'>Offer: </label>
+                            <input type="number" name="offer" onChange={handleChange} placeholder='%' id='form-offer' />
                         </div>
                         <div className='col-4'>
                             <label className='d-flex align-items-center check-container'>

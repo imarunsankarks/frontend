@@ -143,6 +143,7 @@ const Update = () => {
         <div className="container">
             {loading && <h2>Loading...</h2>}
             <h2>Update Product</h2>
+            <br></br>
             <form onSubmit={handleSubmit} className="updateForm">
                 <div className="eachUpdateField">
                     <label htmlFor='name'>Name: </label>
