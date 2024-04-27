@@ -52,7 +52,7 @@ const Create = () => {
                 }
             }
 
-            const response = await fetch('/api/routes/', {
+            const response = await fetch(process.env.REACT_APP_BACKEND_URL, {
                 method: 'POST',
                 body: formDataToSend,
             });

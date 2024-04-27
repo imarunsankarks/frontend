@@ -6,14 +6,14 @@ const BlogDetails = () => {
   const {
     loading,
     data: blogs,
-  } = useFetch("/api/routes/" + id);
+  } = useFetch(process.env.REACT_APP_BACKEND_URL + id);
 
   const history = useHistory()
 
   // console.log(blogs);
 
   const handleClick = () => {
-    fetch('/api/routes/' + id, {
+    fetch(process.env.REACT_APP_BACKEND_URL + id, {
       method: 'DELETE'
     }).then(() => {
       history.push('/')
