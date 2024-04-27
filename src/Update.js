@@ -82,7 +82,7 @@ const Update = () => {
 
         setIsPending(true);
 
-        fetch(`/api/routes/${id}`, {
+        fetch(process.env.REACT_APP_BACKEND_URL + id, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
