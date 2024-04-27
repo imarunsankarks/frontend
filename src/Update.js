@@ -153,33 +153,53 @@ const Update = () => {
         <div className="container">
             {loading && <h2>Loading...</h2>}
             <h2>Update Product</h2>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor='name'>Name: </label>
-                <input type='text' id='name' name='name' value={name} onChange={handleChange} />
-                <label htmlFor='category'>Category: </label>
-                <input type='text' id='category' name='category' value={category} onChange={handleChange} />
-                <label htmlFor='color'>Color: </label>
-                <input type='text' id='color' name='color' value={color} onChange={handleChange} />
-                <label htmlFor='price'>Price: </label>
-                <input type='number' id='price' name='price' value={price} onChange={handleChange} />
+            <form onSubmit={handleSubmit} className="updateForm">
+                <div className="eachUpdateField">
+                    <label htmlFor='name'>Name: </label>
+                    <input type='text' id='name' name='name' value={name} onChange={handleChange} />
+                </div>
+                <div className="eachUpdateField">
+                    <label htmlFor='category'>Category: </label>
+                    <input type='text' id='category' name='category' value={category} onChange={handleChange} />
+                </div>
+                <div className="eachUpdateField">
+                    <label htmlFor='color'>Color: </label>
+                    <input type='text' id='color' name='color' value={color} onChange={handleChange} />
+                </div>
+                <div className="eachUpdateField">
+                    <label htmlFor='price'>Price: </label>
+                    <input type='number' id='price' name='price' value={price} onChange={handleChange} />
+                </div>
                 {/* <label htmlFor='image1'>Image 1: </label>
                 <input type='text' id='image1' name='image1' value={image1} onChange={handleChange} />
                 <label htmlFor='image2'>Image 2: </label>
                 <input type='text' id='image2' name='image2' value={image2} onChange={handleChange} />
                 <label htmlFor='image3'>Image 3: </label>
                 <input type='text' id='image3' name='image3' value={image3} onChange={handleChange} /> */}
-                <label htmlFor='material'>Material: </label>
-                <input type='text' id='material' name='material' value={material} onChange={handleChange} />
-                <label htmlFor='size'>Size: </label>
-                <input type='text' id='size' name='size' value={size} onChange={handleChange} />
-                <label htmlFor='quantity'>Quantity: </label>
-                <input type='text' id='quantity' name='quantity' value={quantity} onChange={handleChange} />
-                <label htmlFor='offer'>Offer: </label>
-                <input type='text' id='offer' name='offer' value={offer} onChange={handleChange} />
-                <label htmlFor='status'>Status: </label>
-                <input type='checkbox' id='status' name='status' checked={status} onChange={handleChange} />
-                {!isPending && <button>Submit</button>}
-                {isPending && <button>Adding....</button>}
+                <div className="eachUpdateField">
+                    <label htmlFor='material'>Material: </label>
+                    <input type='text' id='material' name='material' value={material} onChange={handleChange} />
+                </div>
+                <div className="eachUpdateField">
+                    <label htmlFor='size'>Size: </label>
+                    <input type='text' id='size' name='size' value={size} onChange={handleChange} />
+                </div>
+                <div className="eachUpdateField">
+                    <label htmlFor='quantity'>Quantity: </label>
+                    <input type='text' id='quantity' name='quantity' value={quantity} onChange={handleChange} />
+                </div>
+
+                <div className="eachUpdateField">
+                    <label htmlFor='offer'>Offer: </label>
+                    <input type='text' id='offer' name='offer' value={offer} onChange={handleChange} />
+                </div>
+                <div className="eachUpdateField">
+                    <label htmlFor='status'>Status: </label>
+                    <input type='checkbox' id='status' name='status' checked={status} onChange={handleChange} />
+                </div>
+
+                {!isPending && <button>Update</button>}
+                {isPending && <button>Updating....</button>}
             </form>
         </div>
     );

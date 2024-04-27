@@ -37,30 +37,34 @@ const BlogDetails = () => {
             </div>
           </div>
           <div className="col-6">
-            <h2>{blogs.name}</h2>
-            <h6>₹ {blogs.price}</h6>
-            <p>Category: {blogs.category}</p>
-            <p>Color: {blogs.color}</p>
-            <p>Material: {blogs.material}</p>
-            <ul>
-              {blogs.size.map((element) => (
-                <li key={element}>{element}</li>
-              ))}
-            </ul>
-            <ul>
-              {blogs.quantity.map((element) => (
-                <li key={element}>{element}</li>
-              ))}
-            </ul>
-            <p>Status: {blogs.status.toString()}</p>
-            <button onClick={handleClick}>Delete</button>
-            <Link
-              to={{
-                pathname: "/update/" + blogs._id
-              }}
-            >
-              Update Product
-            </Link>
+            <div className="eachProductDetails">
+              <h2>{blogs.name}</h2>
+              <h6>₹ {blogs.price}</h6>
+              <p><span>Category:</span> {blogs.category}</p>
+              <p><span>Color:</span> {blogs.color}</p>
+              <p><span>Material:</span> {blogs.material}</p>
+              <ul>
+                {blogs.size.map((element) => (
+                  <li key={element}><span>Available Size:</span> {element}</li>
+                ))}
+              </ul>
+              <ul>
+                {blogs.quantity.map((element) => (
+                  <li key={element}><span>Available Quantity: </span>{element}</li>
+                ))}
+              </ul>
+              <p className="productStatus" style={{ backgroundColor: blogs.status ? 'green' : 'red' }}>{blogs.status ? 'Available' : 'Not available'}</p>
+              <br></br>
+              <button onClick={handleClick}>Delete</button>
+              <Link
+                to={{
+                  pathname: "/update/" + blogs._id
+                }}
+              >
+                Update Product
+              </Link>
+
+            </div>
 
           </div>
         </div>
