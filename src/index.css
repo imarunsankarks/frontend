@@ -43,6 +43,9 @@ h6 {
   gap: 30px;
   justify-content: flex-end;
 }
+.navbar img {
+  width: 80px;
+}
 
 .navs a {
   font-size: 16px;
@@ -218,6 +221,8 @@ form button {
 .eachProductDetails ul {
   list-style: none;
   padding: 0;
+  display: flex;
+  gap: 10px;
 }
 
 .eachProductDetails .productStatus {

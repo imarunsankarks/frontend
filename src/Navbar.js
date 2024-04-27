@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import logo from './Logob.png'
 
 const Navbar = () => {
   return (
@@ -6,12 +7,12 @@ const Navbar = () => {
       <div className="row">
         <div className="navbar">
           <div className="col-6">
-            <h1>Logo</h1>
+            <img src={logo} alt="" />
           </div>
           <div className="col-6 text-end">
             <div className="navs">
               <Link to="/">Home</Link>
-              <Link to="/create">Create</Link>
+              <Link to="/create">Add new</Link>
             </div>
           </div>
         </div>

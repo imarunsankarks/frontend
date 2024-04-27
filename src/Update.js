@@ -6,17 +6,11 @@ import useFetch from './useFetch'
 
 const Update = () => {
     const { id } = useParams();
-    console.log(id);
     const {
         loading,
         data: blogs,
     } = useFetch(process.env.REACT_APP_BACKEND_URL + id);
 
-    console.log(blogs)
-
-    if (blogs) {
-        console.log(blogs.name);
-    }
 
     const [name, setName] = useState('');
     const [category, setCategory] = useState('');
@@ -35,7 +29,6 @@ const Update = () => {
     const navigate = useHistory();
 
 
-    console.log("I am here")
     useEffect(() => {
         if (blogs) {
             const { name, category, color, price, material, size, quantity, offer, status } = blogs;
@@ -57,7 +50,6 @@ const Update = () => {
 
     console.log("Name: ", name)
     const handleSubmit = (e) => {
-        console.log("inside handle submit")
         e.preventDefault();
         // setImage1(imgLocation + image1);
         // setImage2(imgLocation + image2);
@@ -77,7 +69,6 @@ const Update = () => {
             offer,
             status
         };
-        console.log(name);
 
 
         setIsPending(true);
@@ -101,7 +92,6 @@ const Update = () => {
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
-        console.log("I am inside handle change")
         if (name === 'size' || name === 'quantity') {
             const arrayValue = value.split(',').map((item) => item.trim());
             if (name === 'size') {

@@ -25,7 +25,7 @@ const BlogDetails = () => {
     <div className="container product-details">
       {loading && <p>Loading...</p>}
       {blogs && (
-        <div className="row">
+        <div className="row g-5">
           <div className="col-6">
             <div className="all-imgs">
               <img src={blogs.image1} alt="" className="img1" />
@@ -44,13 +44,15 @@ const BlogDetails = () => {
               <p><span>Color:</span> {blogs.color}</p>
               <p><span>Material:</span> {blogs.material}</p>
               <ul>
+                <li><span>Available Size:</span></li>
                 {blogs.size.map((element) => (
-                  <li key={element}><span>Available Size:</span> {element}</li>
+                  <li key={element}> {element},</li>
                 ))}
               </ul>
               <ul>
+                <li><span>Available Quantity: </span></li>
                 {blogs.quantity.map((element) => (
-                  <li key={element}><span>Available Quantity: </span>{element}</li>
+                  <li key={element}>{element},</li>
                 ))}
               </ul>
               <p className="productStatus" style={{ backgroundColor: blogs.status ? 'green' : 'red' }}>{blogs.status ? 'Available' : 'Not available'}</p>

@@ -27,10 +27,9 @@ const Create = () => {
                 [name]: arrayValue,
             }));
         } else if (type === 'file') {
-            // For file inputs, set the file object directly
             setFormData((prevData) => ({
                 ...prevData,
-                [name]: files[0], // Assuming single file upload
+                [name]: files[0],
             }));
         } else {
             setFormData((prevData) => ({
@@ -45,7 +44,6 @@ const Create = () => {
 
         try {
             const formDataToSend = new FormData();
-            // Append all form data fields to FormData object
             for (const key in formData) {
                 if (formData[key] !== null) {
                     formDataToSend.append(key, formData[key]);
@@ -63,22 +61,6 @@ const Create = () => {
 
             const result = await response.json();
             console.log('Data added successfully:', result);
-            // Reset form data after successful submission
-            setFormData({
-                id: '',
-                name: '',
-                category: '',
-                color: '',
-                price: '',
-                image1: null,
-                image2: null,
-                image3: null,
-                material: '',
-                size: [],
-                quantity: [],
-                offer: '',
-                status: true,
-            });
         } catch (error) {
             console.error('Error:', error.message);
         }
